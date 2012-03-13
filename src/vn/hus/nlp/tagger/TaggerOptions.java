@@ -13,4 +13,5 @@ package vn.hus.nlp.tagger;
 public class TaggerOptions {
 	public static boolean UNDERSCORE = false;
 	public static boolean PLAIN_TEXT_FORMAT = false;
+	public static boolean SKIP_TOKENIZATION = false;
 }

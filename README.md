@@ -28,7 +28,9 @@ For example:
 	 	
 Note that the file `0.txt` must exist and contain some Vietnamese text encoded in UTF-8 encoding. The result file `0.tagged.xml` is a text file (A simple XML format) created by the program and it is always encoded in UTF-8 encoding.
 	 	
-By default, syllables of compound words are separated by spaces, you can use option `-u` to separate them by underscore (_) character. If you want that the result file is a plain text instead of an XML file, use the option `-p`.  
+- By default, syllables of compound words are separated by spaces, you can use option `-u` to **separate them by `_` character**.
+- If you want that the result file is a **plain text instead of an XML** file, use the option `-p`.  
+- If the input text is already tokenized, you can tell vnTagger to **skip tokenization** by passing `-s` argument.
 	 	
 Thus, the command
 	 	
@@ -49,6 +51,28 @@ If you want to test the accuracy of the tagger on a correctly tagged file, use t
 	./vnTagger.sh -t samples/1.tagged.txt
 		
 Results of the test will be outputed to the standard console. Note that the test file need to be a plain text file in which syllables are separated by underscores, words are separated by spaces.
+
+
+## API for Developers
+	
+The main class of the tagger is `vn.hus.nlp.tagger.VietnameseMaxentTagger`. This class provides three **instance methods** to tag text:
+			
+1. Tag a text and return a tagged string:
+
+		public String tagText(String text)
+	
+2. Tag an input text file and write the result to an output file, using an outputer:
+
+		public void tagFile(String inputFile, String outputFile, IOutputer outputer)
+		
+3. Tag an input text file and write the result to an output file, using a default plain outputer.
+	
+		public void tagFile(String inputFile, String outputFile)
+
+4. And a method for test a tagged file:
+	
+		public void testFile(String filename)
+
 
 ## Tagset
 
@@ -75,27 +99,34 @@ The tagset in use contains 17 main lexical tags:
 		
 There are also tags for delimiters and punctuations.
 
-## API for Developers
-	
-The main class of the tagger is `vn.hus.nlp.tagger.VietnameseMaxentTagger`. This class provides three **instance methods** to tag text:
-			
-1. Tag a text and return a tagged string:
+## Changes Logs
 
-		public String tagText(String text)
-	
-2. Tag an input text file and write the result to an output file, using an outputer:
+#### 13/03/2012
 
-		public void tagFile(String inputFile, String outputFile, IOutputer outputer)
-		
-3. Tag an input text file and write the result to an output file, using a default plain outputer.
-	
-		public void tagFile(String inputFile, String outputFile)
+- Added option to POS tag pre-tokenized text (skip tokenization).
 
-4. And a method for test a tagged file:
+---
+
+#### 01/04/2010
+
+- Upgrade to use with Stanford Tagger 2.0.
+
+#### 25/12/2009
+
+- Upgrade the tokenizer module to vnTokenizer 4.1.1.
+- Update resources
+
+#### 30/11/2009
+
+- Upgrade the tokenizer module to vnTokenizer 4.1.0 (with a minor bug fixed).
+- Update resources, use a richer feature set for tagging texts, especially Vietnamese-specific features.
+- Much better tagging results.
 	
-		public void testFile(String filename)
-		
-    			
+#### 18/07/2009
+
+- Upgrade the tokenizer module to vnTokenizer 4.1
+- Update resources.
+	
 ## LICENSE
   
 See the LICENSE file.	

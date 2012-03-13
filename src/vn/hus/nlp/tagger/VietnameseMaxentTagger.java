@@ -117,7 +117,12 @@ public class VietnameseMaxentTagger {
 	public List<WordTag> tagText2(String text) {
 		try {
 			// tokenizer the reader
-			String tokenizedString = getTokenizer().segment(text);
+			String tokenizedString = null;
+			if (TaggerOptions.SKIP_TOKENIZATION)
+				tokenizedString = text;
+			else
+				getTokenizer().segment(text);
+			
 			String[] arr = tokenizedString.split("\\s+");
 			List<String> words = new ArrayList<String>(Arrays.asList(arr));
 			return tagList(words);
@@ -258,6 +263,9 @@ public class VietnameseMaxentTagger {
 		Option plainTextFormatOpt = new Option("p", "Use plain text format for saving tagging results.");
 		options.addOption(plainTextFormatOpt);
 		
+		Option skipTokenizationOpt = new Option("s", "Skip tokenization (input is already tokenized)");
+		options.addOption(skipTokenizationOpt);
+		
 		// create obligatory input/output options
 		Option inpOpt = new Option("i", true, "Input filename");
 		options.addOption(inpOpt);
@@ -291,6 +299,10 @@ public class VietnameseMaxentTagger {
 				
 				if (commandLine.hasOption("p")) {
 					TaggerOptions.PLAIN_TEXT_FORMAT = true;
+				}
+				
+				if (commandLine.hasOption("s")) {
+					TaggerOptions.SKIP_TOKENIZATION = true;
 				}
 				
 				String inputFile = commandLine.getOptionValue("i");
