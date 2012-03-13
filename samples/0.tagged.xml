@@ -1,0 +1,173 @@
+<doc>
+	<s>
+		<w pos="N">Cô</w>
+		<w pos="P">ấy</w>
+		<w pos="E">cho</w>
+		<w pos="P">tôi</w>
+		<w pos="M">một</w>
+		<w pos="Nc">quả</w>
+		<w pos="N">cam</w>
+		<w pos=".">.</w>
+	</s>
+	<s>
+		<w pos="N">Bất kì</w>
+		<w pos="M">1</w>
+		<w pos="Nu">USD</w>
+		<w pos="V">tăng trưởng</w>
+		<w pos="P">nào</w>
+		<w pos="E">của</w>
+		<w pos="Np">ASEAN</w>
+		<w pos="R">cũng</w>
+		<w pos="V">có</w>
+		<w pos="M">6</w>
+		<w pos="N">cent</w>
+		<w pos="V">xuất khẩu</w>
+		<w pos="E">của</w>
+		<w pos="Np">Nhật Bản</w>
+		<w pos="E">tới</w>
+		<w pos="Np">ASEAN</w>
+		<w pos=".">.</w>
+	</s>
+	<s>
+		<w pos="N">Điều</w>
+		<w pos="P">này</w>
+		<w pos="V">cho</w>
+		<w pos="V">thấy</w>
+		<w pos="A">tỉ trọng</w>
+		<w pos="E">của</w>
+		<w pos="N">kinh tế</w>
+		<w pos="Np">ASEAN</w>
+		<w pos="E">trong</w>
+		<w pos="Np">GDP</w>
+		<w pos="Np">Nhật Bản</w>
+		<w pos="A">lớn</w>
+		<w pos="X">như thế nào</w>
+		<w pos=".">.</w>
+	</s>
+	<s>
+		<w pos="N">Tình hình</w>
+		<w pos="E">với</w>
+		<w pos="Np">Trung Quốc</w>
+		<w pos="R">cũng</w>
+		<w pos="X">như vậy</w>
+		<w pos=".">.</w>
+	</s>
+	<s>
+		<w pos="C">Như</w>
+		<w pos="N">bạn</w>
+		<w pos="R">đã</w>
+		<w pos="V">biết</w>
+		<w pos=",">,</w>
+		<w pos="Np">Biển Đông</w>
+		<w pos="V">là</w>
+		<w pos="N">tuyến</w>
+		<w pos="N">đường biển</w>
+		<w pos="N">chiến lược</w>
+		<w pos=".">.</w>
+	</s>
+	<s>
+		<w pos="V">Bất chấp</w>
+		<w pos="L">những</w>
+		<w pos="A">căng thẳng</w>
+		<w pos="CC">và</w>
+		<w pos="V">phản ứng</w>
+		<w pos="E">của</w>
+		<w pos="L">các</w>
+		<w pos="N">bên</w>
+		<w pos=",">,</w>
+		<w pos="E">giữa</w>
+		<w pos="L">các</w>
+		<w pos="N">quốc gia</w>
+		<w pos="V">liên quan</w>
+		<w pos="R">vẫn</w>
+		<w pos="V">chia sẻ</w>
+		<w pos="N">lợi ích</w>
+		<w pos="A">chung</w>
+		<w pos=":">:</w>
+		<w pos="V">duy trì</w>
+		<w pos="Np">Biển Đông</w>
+		<w pos="N">an ninh</w>
+		<w pos="CC">và</w>
+		<w pos="V">ổn định</w>
+		<w pos=".">.</w>
+	</s>
+	<s>
+		<w pos="M">80%</w>
+		<w pos="N">nguồn</w>
+		<w pos="N">năng lượng</w>
+		<w pos="V">cung cấp</w>
+		<w pos="E">cho</w>
+		<w pos="M">ba</w>
+		<w pos="N">quốc gia</w>
+		<w pos="A">lớn</w>
+		<w pos="A">nhất</w>
+		<w pos="E">ở</w>
+		<w pos="Np">Đông</w>
+		<w pos="Np">Á</w>
+		<w pos="V">là</w>
+		<w pos="Np">Nhật Bản</w>
+		<w pos=",">,</w>
+		<w pos="Np">Hàn Quốc</w>
+		<w pos="CC">và</w>
+		<w pos="Np">Trung Quốc</w>
+		<w pos="R">đều</w>
+		<w pos="E">từ</w>
+		<w pos="Np">Biển Đông</w>
+		<w pos="CC">hoặc</w>
+		<w pos="V">đi</w>
+		<w pos="V">qua</w>
+		<w pos="Np">Biển Đông</w>
+		<w pos=".">.</w>
+	</s>
+	<s>
+		<w pos="N">Thương mại</w>
+		<w pos="CC">và</w>
+		<w pos="L">các</w>
+		<w pos="N">sản phẩm</w>
+		<w pos="R">cũng</w>
+		<w pos="P">vậy</w>
+		<w pos=".">.</w>
+	</s>
+	<s>
+		<w pos="E">Nhờ</w>
+		<w pos="P">đó</w>
+		<w pos=",">,</w>
+		<w pos="P">chúng ta</w>
+		<w pos="R">có thể</w>
+		<w pos="V">kiềm chế</w>
+		<w pos="A">căng thẳng</w>
+		<w pos="CC">và</w>
+		<w pos="L">các</w>
+		<w pos="N">xung đột</w>
+		<w pos="V">tiếm</w>
+		<w pos="R">năng</w>
+		<w pos="R">không</w>
+		<w pos="V">dẫn</w>
+		<w pos="E">tới</w>
+		<w pos="N">xung đột</w>
+		<w pos="N">quân sự</w>
+		<w pos=".">.</w>
+	</s>
+	<s>
+		<w pos="C">Mặc dù</w>
+		<w pos="N">cuộc chiến</w>
+		<w pos="Np">Iraq</w>
+		<w pos="CC">và</w>
+		<w pos="Np">Afghanistan</w>
+		<w pos="C">cũng như</w>
+		<w pos="N">việc</w>
+		<w pos="V">sao nhãng</w>
+		<w pos="N">khu vực</w>
+		<w pos="N">chiến lược</w>
+		<w pos="A">quan trọng</w>
+		<w pos="Np">Đông</w>
+		<w pos="Np">Á</w>
+		<w pos="N">lâu nay</w>
+		<w pos="V">khiến</w>
+		<w pos="Np">Hoa Kỳ</w>
+		<w pos="A">yếu</w>
+		<w pos="V">đi</w>
+		<w pos="L">phần nào</w>
+		<w pos=".">.</w>
+	</s>
+</doc>

@@ -1,0 +1,148 @@
+<project name="vn.hus.nlp.tagger" basedir="." default="jar">
+
+	<property name="version" value="4.2.0" />
+	<property name="src.dir" value="src" />
+
+	<property name="build.dir" value="build" />
+	<property name="classes.dir" value="${build.dir}/classes" />
+	<property name="jar.dir" value="${build.dir}/jar" />
+
+	<property name="lib.dir" value="lib" />
+
+
+	<property name="dist.dir" value="dist" />
+	<property name="dist.src.dir" value="${dist.dir}/${ant.project.name}-${version}-src" />
+	<property name="dist.bin.dir" value="${dist.dir}/${ant.project.name}-${version}-bin" />
+
+	<property name="main-class" value="vn.hus.nlp.tagger.VietnameseMaxentTagger" />
+
+
+
+
+	<path id="classpath">
+		<fileset dir="${lib.dir}" includes="**/*.jar" />
+	</path>
+
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${dist.dir}" />
+	</target>
+
+
+	<target name="compile">
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" />
+	</target>
+
+
+	<target name="jar" depends="compile">
+		<mkdir dir="${jar.dir}" />
+		<jar destfile="${jar.dir}/${ant.project.name}-${version}.jar" basedir="${classes.dir}" manifest="MANIFEST">
+		</jar>
+	</target>
+
+
+	<target name="run" depends="jar">
+		<java fork="true" classname="${main-class}">
+			<classpath>
+				<path refid="classpath" />
+				<path location="${jar.dir}/${ant.project.name}-${version}.jar" />
+			</classpath>
+		</java>
+	</target>
+
+	<target name="javadoc">
+		<javadoc  destdir="docs/api" sourcepath="src"  defaultexcludes="yes" author="true" version="true" use="true" windowtitle="vnTagger API">
+			<doctitle><![CDATA[<h1>vnTagger 4.0.0</h1>]]></doctitle>
+		    <bottom><![CDATA[<i>Copyright &#169; 2009 phuonglh@gmail.com</i>]]></bottom>
+		</javadoc>
+	</target>
+	
+	<target name="main" depends="clean,run" />
+
+	
+	<!-- Files common to both the binary and src distributions -->
+	<target name="dist-common" description="Files common to both the bin and src distributions">
+
+		<!-- files common for bin and src distributions -->
+		<patternset id="dist.common.files">
+			<include name="samples/**" />
+			<include name="resources/**" />
+			<include name="*.txt" />
+			<include name="**/.properties" />
+			<exclude name="**/.*" />
+		</patternset>
+
+		<!-- scripts to run application -->
+		<patternset id="dist.script.files">
+			<include name="*.sh" />
+			<include name="*.bat" />
+		</patternset>
+
+		<!-- source files -->
+		<patternset id="dist.src.files">
+			<include name="${src.dir}/**"/>
+			<!-- <include name="schema/**"/> -->
+			<!-- <include name="data/**"/> -->
+			<!-- <include name="notes/**"/> -->
+			<include name="*.xml" />
+			<include name="MANIFEST" />
+		</patternset>
+	</target>
+
+	<!-- Creates the binary distribution -->
+	<target name="dist-bin" depends="jar,dist-common" description="Creates the binary distribution.">
+
+		<mkdir dir="${dist.bin.dir}" />
+		<mkdir dir="${dist.bin.dir}/${lib.dir}" />
+
+		<!-- Copy common and script files -->
+		<copy todir="${dist.bin.dir}">
+			<fileset dir="./">
+				<patternset refid="dist.common.files" />
+				<patternset refid="dist.script.files" />
+			</fileset>
+		</copy>
+
+		<!-- Copy the main jar files -->
+		<copy todir="${dist.bin.dir}">
+			<fileset dir="${jar.dir}" includes="*.jar" />
+		</copy>
+
+
+		<!-- Copy jar files in the lib directory -->
+		<copy todir="${dist.bin.dir}/${lib.dir}">
+			<fileset dir="${lib.dir}" includes="*.jar" />
+		</copy>
+
+	</target>
+
+	<target name="dist-src" depends="dist-common" description="Creates the source distribution.">
+		<mkdir dir="${dist.src.dir}" />
+		<mkdir dir="${dist.src.dir}/${lib.dir}" />
+
+		<!-- Copy source files -->
+		<copy todir="${dist.src.dir}">
+			<fileset dir="./">
+				<patternset refid="dist.src.files" />
+				<patternset refid="dist.common.files" />
+				<patternset refid="dist.script.files" />
+			</fileset>
+		</copy>
+
+		<!-- Copy jar files in the lib directory -->
+		<copy todir="${dist.src.dir}/${lib.dir}">
+			<fileset dir="${lib.dir}" includes="*.jar" />
+		</copy>
+
+	</target>
+	
+	<target name="dist-tar" depends="dist-src,dist-bin" description="Creates tar.gz files for bin and src distributions">
+		<!-- Produces the bin dist tar/gzip file -->
+		<tar tarfile="${dist.dir}/${ant.project.name}-${version}-bin.tar.gz" basedir="${dist.bin.dir}" compression="gzip" />
+
+		<!-- Produces the src dist tar/gzip file -->
+		<tar tarfile="${dist.dir}/${ant.project.name}-${version}-src.tar.gz" basedir="${dist.src.dir}" compression="gzip" />
+	</target>
+</project>

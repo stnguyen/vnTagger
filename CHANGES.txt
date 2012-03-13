@@ -1,0 +1,19 @@
+
+01/04/2010
+	- Upgrade to use with Stanford Tagger 2.0.
+
+25/12/2009
+
+	- Upgrade the tokenizer module to vnTokenizer 4.1.1.
+	- Update resources
+
+30/11/2009
+
+	- Upgrade the tokenizer module to vnTokenizer 4.1.0 (with a minor bug fixed).
+	- Update resources, use a richer feature set for tagging texts, especially Vietnamese-specific features.
+	- Much better tagging results.
+	
+18/07/2009
+
+	- Upgrade the tokenizer module to vnTokenizer 4.1
+	- Update resources.

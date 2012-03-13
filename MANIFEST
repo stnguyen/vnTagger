@@ -1,0 +1,3 @@
+Main-Class: vn.hus.nlp.tagger.VietnameseMaxentTagger
+Class-Path: lib/commons-cli-1.2.jar lib/vn.hus.nlp.utils-1.0.0.jar lib/vn.hus.nlp.tokenizer-4.1.1.jar lib/edu.stanford.nlp.tagger-2.0.jar lib/vn.hus.nlp.fsm-1.0.0.jar
+
