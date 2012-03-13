@@ -263,7 +263,7 @@ public class VietnameseMaxentTagger {
 		Option plainTextFormatOpt = new Option("p", "Use plain text format for saving tagging results.");
 		options.addOption(plainTextFormatOpt);
 		
-		Option skipTokenizationOpt = new Option("s", "Skip tokenization (input is already tokenized)");
+		Option skipTokenizationOpt = new Option("st", "Skip tokenization (input must be already tokenized)");
 		options.addOption(skipTokenizationOpt);
 		
 		// create obligatory input/output options
@@ -301,7 +301,7 @@ public class VietnameseMaxentTagger {
 					TaggerOptions.PLAIN_TEXT_FORMAT = true;
 				}
 				
-				if (commandLine.hasOption("s")) {
+				if (commandLine.hasOption("st")) {
 					TaggerOptions.SKIP_TOKENIZATION = true;
 				}
 				

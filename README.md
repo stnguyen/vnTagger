@@ -30,7 +30,7 @@ Note that the file `0.txt` must exist and contain some Vietnamese text encoded i
 	 	
 - By default, syllables of compound words are separated by spaces, you can use option `-u` to **separate them by `_` character**.
 - If you want that the result file is a **plain text instead of an XML** file, use the option `-p`.  
-- If the input text is already tokenized, you can tell vnTagger to **skip tokenization** by passing `-s` argument.
+- If the input text is already tokenized, you can tell vnTagger to **skip tokenization** by passing using the `-st` option.
 	 	
 Thus, the command
 	 	
