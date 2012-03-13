@@ -78,6 +78,7 @@ public class VietnameseMaxentTagger {
 		// tag the tokenized string 
 		// changed from version 2.0 of Stanford Maxent Tagger
 		String taggedString = MaxentTagger.tagTokenizedString(buffer.toString());
+
 		// split the tagged string using the word/tag delimiter
 		String[] pairs = taggedString.split("\\s+");
 		String word, tag;
@@ -121,7 +122,7 @@ public class VietnameseMaxentTagger {
 			if (TaggerOptions.SKIP_TOKENIZATION)
 				tokenizedString = text;
 			else
-				getTokenizer().segment(text);
+				tokenizedString = getTokenizer().segment(text);
 			
 			String[] arr = tokenizedString.split("\\s+");
 			List<String> words = new ArrayList<String>(Arrays.asList(arr));

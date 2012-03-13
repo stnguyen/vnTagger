@@ -2,4 +2,4 @@ bin/
 .settings/
 ._*
 *.swp
-*.log
+*.log*
